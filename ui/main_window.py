@@ -1,4 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QPushButton
+
 
 
 
@@ -6,6 +8,11 @@ class MainWindow(QMainWindow):
   def __init__(self):
     super().__init__()
     self.setWindowTitle("My PyQt5 Application")
+
+    self.start_button = QPushButton("Start... something lol")
+    self.stop_button = QPushButton("Stop")
+    self.load_button = QPushButton("Load hmm")
+
 
   def start_tracking(self):
      print("tracking started")

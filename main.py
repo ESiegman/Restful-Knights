@@ -1,9 +1,16 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
+from ui.main_window import MainWindow
 
 
-class MainWindow:
-  def __init__(self):
-    super().__init__()
-    self.setWindowTitle("My PyQt5 Application")
-    
+
+
+def main():
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()

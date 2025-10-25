@@ -24,7 +24,7 @@ stage_map = {'Sleep stage W': 0,   # Wake
              # Not used in final data usage, but needed for data processing
              'Sleep stage ?': -1} # describes each sleep stage
 NUM_CLASSES = 5 # 5 sleep stages
-
+device = 'cpu' # current hardware using
 
 
 # LOAD & FILTER DATA
@@ -264,7 +264,7 @@ def train_eeg_model(model, train_loader, val_loader, num_epochs):
         running_loss = 0.0
 
         for inputs, labels in train_loader:
-            inputs, labels = inputs.to('cpu'), labels.to('cpu')
+            inputs, labels = inputs.to(device), labels.to(device)
 
             optimizer.zero_grad()  # Zero the parameter gradients
 
@@ -283,7 +283,7 @@ def train_eeg_model(model, train_loader, val_loader, num_epochs):
 
         with torch.no_grad():  # Disable gradient calculation for efficiency
             for inputs, labels in val_loader:
-                inputs, labels = inputs.to('cpu'), labels.to('cpu')
+                inputs, labels = inputs.to(device), labels.to(device)
                 outputs = model(inputs)
                 loss = lossfunc(outputs, labels)
                 val_loss += loss.item() * inputs.size(0)
@@ -427,4 +427,4 @@ if __name__ == "__main__":
     # Call training function!
     train_eeg_model(model, train_loader, val_loader, num_epochs=32)
 
-    test_eeg_model(model, test_loader, 'cpu')
+    test_eeg_model(model, test_loader, device)

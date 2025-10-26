@@ -88,7 +88,7 @@ See `KernelExperiment/new.stats.csv` and `KernelExperiment/standard.stats.csv` f
 - **Compilation and Benchmarking:**
   After integration, the kernel will be benchmarked against PyTorch's built-in kernels in real training scenarios to evaluate performance and correctness.
 - **Additional Biosignals**
-  Integration of ther biosignals, including ECG and breath rate, would significantly increase the accuracy of the screening. The ECG analysis could utilize a data algorithm similar to the existing EEG convolutional neural network, while the breathing rate one could be modeled after the blood oxygen algorithm.
+  Integration of the biosignals, including ECG and breath rate, would significantly increase the accuracy of the screening. The ECG analysis could utilize a data algorithm similar to the existing EEG convolutional neural network, while the breathing rate one could be modeled after the blood oxygen algorithm.
 
 
   ## Sleep-EDF Database

@@ -20,8 +20,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Ollama server (binary)
-RUN wget https://github.com/ollama/ollama/releases/download/v0.1.34/ollama-linux-amd64 -O /usr/local/bin/ollama & \
-    chmod +x /usr/local/bin/ollama &\
+RUN wget https://github.com/ollama/ollama/releases/download/v0.1.34/ollama-linux-amd64 -O /usr/local/bin/ollama && \
+    chmod +x /usr/local/bin/ollama &&\
     file /usr/local/bin/ollama
 
 # Install Python packages
@@ -35,7 +35,9 @@ RUN pip install --upgrade pip && \
     PyQt5==5.15.11 \
     ollama==0.6.0 \
     beautifulsoup4==4.14.2 \
-    Markdown==3.9
+    Markdown==3.9 \
+    pyserial \
+    pyqtgraph
 
 # Copy your application code into the container
 COPY . .

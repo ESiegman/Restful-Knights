@@ -329,16 +329,7 @@ def train_eeg_model(model, train_loader, val_loader, num_epochs):
         # print metrics
         print(f"Epoch {epoch + 1}/{num_epochs} | Train Loss: {epoch_loss:.4f} | Val Loss: {val_loss:.4f} | Val Acc: {val_accuracy:.2f}%")
 
-        # Perform early Stopping
-        if val_loss < best_val_loss:
-            best_val_loss = val_loss
-            patience_counter = 0
 
-        else:
-            patience_counter += 1
-            if patience_counter >= patience:
-                print(f"Early stopping triggered after {epoch + 1} epochs.")
-                break
 
 ##
 # @brief Tests the EEG classification model.

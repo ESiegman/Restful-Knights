@@ -41,7 +41,7 @@ docker build -t $IMAGE_NAME ./Model
 ##
 # @step 4
 # @brief Run the Docker container with GPU, device, and X11 access.
-docker run --rm -it \
+docker run -it \
   --name $CONTAINER_NAME \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -53,6 +53,7 @@ docker run --rm -it \
   -v "$(pwd)":/app \
   -v "$(pwd)/DataCollection":/app/DataCollection \
   -v "$(pwd)/KernelExperiment":/app/KernelExperiment \
+  -v ~/.ollama:/root/.ollama \
   $IMAGE_NAME
 
 ##

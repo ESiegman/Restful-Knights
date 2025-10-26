@@ -37,7 +37,7 @@ class MainWindow(QMainWindow):
         main_layout.setSpacing(15)
         main_layout.setContentsMargins(20, 20, 20, 20)
 
-        title_label = QLabel("Our name goes here")
+        title_label = QLabel("Restful Knights")
         title_label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         title_label.setStyleSheet("font-size: 24px; font-weight: bold; margin-top: 5px;")
         main_layout.addWidget(title_label, alignment=Qt.AlignHCenter | Qt.AlignTop)

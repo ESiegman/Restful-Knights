@@ -1,8 +1,8 @@
-# KnightHacksFinal
+# Restful Knights
 
 ## Overview
 
- is a comprehensive sleep analysis and data collection platform. It integrates hardware sensor data (Plux Biosignals EEG module, MAX30102 blood oxygen sensor) with machine learning models and a modern PyQt5 user interface. The project supports both real-time data acquisition and post-hoc analysis, leveraging custom GPU kernels and LLM-based reporting. Data acquisition is performed using an Arduino Nano ESP32.
+ Restful Knights is a comprehensive sleep analysis and data collection platform. It integrates hardware sensor data (Plux Biosignals EEG module, MAX30102 blood oxygen sensor) with machine learning models and a modern PyQt5 user interface. The project supports both real-time data acquisition and post-hoc analysis, leveraging custom GPU kernels and LLM-based reporting. Data acquisition is performed using an Arduino Nano ESP32.
 
 ## Features
 
@@ -59,7 +59,7 @@ KernelExperiment/   # Custom CUDA/ROCm kernels and experiments
 
 ## Custom Kernel Performance
 
-The custom CUDA/ROCm kernel implementation for Conv2d weight gradients (`my_custom_wrw_kernel`) reduced the time per call by approximately 50% compared to the standard fallback kernel. However, by replacing the function that normally autorouted to the optimal kernel, all calls were routed through my fallback replacement instead of the optimal implementation. Normally, the deep learning framework automatically selects from many optimal kernels depending on the hardware and configuration, but with my replacement, every convolution weight gradient calculation was handled by my kernel. While my kernel was faster than the fallback, it was much slower than the optimal kernels, resulting in increased total run time.
+The custom CUDA/ROCm kernel implementation for Conv2d weight gradients (`my_custom_wrw_kernel`) reduced the time per call by approximately 50% compared to the standard fallback kernel. However, replacing the function that normally autoroutes to the optimal kernel caused all calls to be routed through the fallback replacement instead of the optimal implementation. Normally, the deep learning framework automatically selects from many optimal kernels depending on the hardware and configuration, but with this replacement, every convolution weight gradient calculation was handled by the custom kernel. While this kernel was faster than the fallback, it was much slower than the optimal kernels, resulting in increased total run time.
 
 ### Stats Comparison
 
@@ -80,3 +80,10 @@ The custom CUDA/ROCm kernel implementation for Conv2d weight gradients (`my_cust
   - **Test Hardware:** AMD Radeon 7900XT GPU, AMD Ryzen 7700X CPU, 32GB DDR5 RAM
 
 See `KernelExperiment/new.stats.csv` and `KernelExperiment/standard.stats.csv` for full profiling details.
+
+## Future Plans
+
+- **PyTorch Source Integration:**
+  Future work includes investigating how to integrate the custom convolution weight gradient kernel directly into the PyTorch source code. This will require understanding PyTorch's kernel dispatch system, registering the kernel as a backend, and compiling PyTorch from source with these changes.
+- **Compilation and Benchmarking:**
+  After integration, the kernel will be benchmarked against PyTorch's built-in kernels in real training scenarios to evaluate performance and correctness.

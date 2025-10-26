@@ -87,6 +87,8 @@ See `KernelExperiment/new.stats.csv` and `KernelExperiment/standard.stats.csv` f
   Future work includes investigating how to integrate the custom convolution weight gradient kernel directly into the PyTorch source code. This will require understanding PyTorch's kernel dispatch system, registering the kernel as a backend, and compiling PyTorch from source with these changes.
 - **Compilation and Benchmarking:**
   After integration, the kernel will be benchmarked against PyTorch's built-in kernels in real training scenarios to evaluate performance and correctness.
+- **Additional Biosignals**
+  Integration of ther biosignals, including ECG and breath rate, would significantly increase the accuracy of the screening. The ECG analysis could utilize a data algorithm similar to the existing EEG convolutional neural network, while the breathing rate one could be modeled after the blood oxygen algorithm.
 
 
   ## Sleep-EDF Database

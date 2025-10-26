@@ -1,0 +1,88 @@
+# Ignore Python cache and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Ignore IDE/project files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore CSV and data logs
+*.csv
+
+# Ignore model weights and checkpoints
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.onnx
+
+# Ignore output images and plots
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.gif
+
+# Ignore log files
+*.log
+*.out
+
+# Ignore Docker artifacts
+*.pid
+*.sock
+
+# Ignore Arduino build files
+*.hex
+*.elf
+
+# Ignore compiled extensions
+*.so
+*.dll
+*.dylib
+
+# Ignore custom kernel build artifacts
+KernelExperiment/build/
+KernelExperiment/*.o
+KernelExperiment/*.obj
+KernelExperiment/*.bin
+
+# Ignore Ollama cache
+ollama/
+
+# Ignore any user secrets or config files
+*.secret
+*.key
+*.pem
+*.crt
+*.cfg
+*.conf
+
+# Ignore backup files
+*~
+*.bak
+*.tmp
+
+# Ignore generated documentation
+docs/_build/
+docs/html/
+docs/latex/

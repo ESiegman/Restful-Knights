@@ -1,5 +1,7 @@
 # Restful Knights
 
+[**View the Full Devpost Submission Here**](https://devpost.com/software/restful-knights)
+
 ## Overview
 
  Restful Knights is a comprehensive sleep analysis and data collection platform. It integrates hardware sensor data (Plux Biosignals EEG module, MAX30102 blood oxygen sensor) with machine learning models and a modern PyQt5 user interface. The project supports both real-time data acquisition and post-hoc analysis, leveraging custom GPU kernels and LLM-based reporting. Data acquisition is performed using an Arduino Nano ESP32.

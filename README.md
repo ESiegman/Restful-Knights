@@ -91,6 +91,9 @@ See `KernelExperiment/new.stats.csv` and `KernelExperiment/standard.stats.csv` f
   Integration of the biosignals, including ECG and breath rate, would significantly increase the accuracy of the screening. The ECG analysis could utilize a data algorithm similar to the existing EEG convolutional neural network, while the breathing rate one could be modeled after the blood oxygen algorithm.
 
 
-  ## Sleep-EDF Database
-  - The following database was used for as training and testing our model
-  - Link: https://www.physionet.org/content/sleep-edfx/1.0.0/sleep-cassette/#files-panel
+## Sleep-EDF Database
+- The following database was used for as training and testing our model
+- Link: https://www.physionet.org/content/sleep-edfx/1.0.0/sleep-cassette/#files-panel
+
+## Special Thanks to AMD
+We extend our deepest gratitude to AMD for their exceptional support of the hackathon and for providing the critical resources that powered our project to win Best Overall Hack!
